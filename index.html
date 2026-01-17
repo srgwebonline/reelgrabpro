@@ -6,6 +6,12 @@
     <title>ReelGrab Pro | Premium Instagram Reels Downloader</title>
     <meta name="description" content="Download Instagram Reels in HD quality without watermark. Plus free tools: Hashtag Generator, Caption Generator, Bio Generator. 100% free, no registration required.">
     
+    <!-- AdSense Script (Add your own publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -139,28 +145,161 @@
             }
         }
 
-        /* AdSense Containers */
-        .ad-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            text-align: center;
-            padding: 1rem;
+        /* Dancing Rock Band in Header */
+        .rock-band {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
         }
 
-        .ad-placeholder {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius);
-            padding: 3rem 2rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            backdrop-filter: blur(10px);
+        .band-member {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 60px;
+            animation: rockDance 1s infinite ease-in-out;
         }
 
-        .ad-placeholder i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
+        .band-member:nth-child(1) { left: 15%; animation-delay: 0s; }
+        .band-member:nth-child(2) { left: 25%; animation-delay: 0.2s; }
+        .band-member:nth-child(3) { left: 35%; animation-delay: 0.4s; }
+        .band-member:nth-child(4) { left: 45%; animation-delay: 0.6s; }
+        .band-member:nth-child(5) { left: 55%; animation-delay: 0.8s; }
+        .band-member:nth-child(6) { left: 65%; animation-delay: 1s; }
+        .band-member:nth-child(7) { left: 75%; animation-delay: 1.2s; }
+        .band-member:nth-child(8) { left: 85%; animation-delay: 1.4s; }
+
+        @keyframes rockDance {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            50% { transform: translateY(5px) rotate(5deg); }
+            75% { transform: translateY(-5px) rotate(-3deg); }
+        }
+
+        .band-head {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--gradient);
+            border-radius: 50%;
+            animation: headBob 0.5s infinite alternate;
+        }
+
+        @keyframes headBob {
+            0% { transform: translateX(-50%) translateY(0); }
+            100% { transform: translateX(-50%) translateY(-3px); }
+        }
+
+        .band-body {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .band-arm {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 4px;
+            animation: armWave 0.3s infinite alternate;
+        }
+
+        .arm-left {
+            left: -15px;
+            transform-origin: right center;
+        }
+
+        .arm-right {
+            right: -15px;
+            transform-origin: left center;
+        }
+
+        @keyframes armWave {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(20deg); }
+        }
+
+        .band-leg {
+            position: absolute;
+            top: 45px;
+            width: 8px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 4px;
+            animation: legKick 0.4s infinite alternate;
+        }
+
+        .leg-left {
+            left: 10px;
+            transform-origin: top center;
+        }
+
+        .leg-right {
+            right: 10px;
+            transform-origin: top center;
+        }
+
+        @keyframes legKick {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(15deg); }
+        }
+
+        /* Music Notes Animation */
+        .music-notes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .note {
+            position: absolute;
+            font-size: 20px;
+            color: var(--primary);
+            opacity: 0.7;
+            animation: floatNote 3s infinite linear;
+        }
+
+        .note:nth-child(1) { top: 20px; left: 20%; animation-delay: 0s; }
+        .note:nth-child(2) { top: 40px; left: 30%; animation-delay: 0.5s; }
+        .note:nth-child(3) { top: 10px; left: 40%; animation-delay: 1s; }
+        .note:nth-child(4) { top: 50px; left: 50%; animation-delay: 1.5s; }
+        .note:nth-child(5) { top: 30px; left: 60%; animation-delay: 2s; }
+        .note:nth-child(6) { top: 60px; left: 70%; animation-delay: 2.5s; }
+        .note:nth-child(7) { top: 20px; left: 80%; animation-delay: 3s; }
+
+        @keyframes floatNote {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Theme Toggle */
@@ -208,6 +347,7 @@
             background: var(--card-bg);
             border-bottom: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
+            overflow: hidden;
         }
 
         .header-container {
@@ -216,6 +356,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .logo {
@@ -1088,6 +1230,11 @@
                 padding: 0.5rem;
                 font-size: 0.9rem;
             }
+
+            /* Hide rock band on smaller screens to avoid clutter */
+            .rock-band {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1172,6 +1319,86 @@
         <div class="shape"></div>
     </div>
 
+    <!-- Dancing Rock Band in Header Background -->
+    <div class="rock-band" id="rockBand">
+        <!-- Band Members -->
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        <div class="band-member">
+            <div class="band-head"></div>
+            <div class="band-body"></div>
+            <div class="band-arm arm-left"></div>
+            <div class="band-arm arm-right"></div>
+            <div class="band-leg leg-left"></div>
+            <div class="band-leg leg-right"></div>
+        </div>
+        
+        <!-- Music Notes -->
+        <div class="music-notes">
+            <div class="note">♪</div>
+            <div class="note">♫</div>
+            <div class="note">♬</div>
+            <div class="note">♪</div>
+            <div class="note">♫</div>
+            <div class="note">♬</div>
+            <div class="note">♪</div>
+        </div>
+    </div>
+
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle">
         <i class="fas fa-moon"></i>
@@ -1211,14 +1438,6 @@
                     Download Instagram Reels & YouTube Shorts in HD quality, plus generate hashtags, captions, and bios. 
                     Everything you need for social media success in one place.
                 </p>
-            </div>
-
-            <div class="ad-container">
-                <div class="ad-placeholder">
-                    <i class="fas fa-ad"></i>
-                    <p>Ad Space (728x90)</p>
-                    <small>Your AdSense ads will appear here</small>
-                </div>
             </div>
 
             <!-- Tools Grid -->
@@ -1273,14 +1492,6 @@
                     </div>
                 </div>
 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-
                 <!-- Popular Tools Section -->
                 <h2>Most Popular Tools</h2>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;">
@@ -1297,14 +1508,6 @@
             <div class="page-content">
                 <h1>Instagram Reels Downloader</h1>
                 <p class="hero-subtitle">Download any Instagram Reel in HD quality without watermark</p>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
                 
                 <!-- Reels Downloader Card -->
                 <div class="main-card">
@@ -1353,14 +1556,6 @@
                     </button>
                 </div>
                 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-                
                 <!-- SEO Content -->
                 <div class="seo-content">
                     <h2>How to Download Instagram Reels</h2>
@@ -1391,14 +1586,6 @@
                     
                     <h2>Legal & Fair Use</h2>
                     <p>Our Reels Downloader is intended for personal use, content inspiration, and fair use purposes. Please respect copyright laws and only download content you have permission to use or that falls under fair use guidelines.</p>
-                    
-                    <div class="ad-container">
-                        <div class="ad-placeholder">
-                            <i class="fas fa-ad"></i>
-                            <p>Ad Space (728x90)</p>
-                            <small>Your AdSense ads will appear here</small>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1408,14 +1595,6 @@
             <div class="page-content">
                 <h1>YouTube Shorts Downloader</h1>
                 <p class="hero-subtitle">Download YouTube Shorts videos in high quality without watermark</p>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
                 
                 <!-- YouTube Shorts Downloader Card -->
                 <div class="main-card">
@@ -1486,14 +1665,6 @@
                     </button>
                 </div>
                 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-                
                 <!-- SEO Content -->
                 <div class="seo-content">
                     <h2>How to Download YouTube Shorts</h2>
@@ -1541,14 +1712,6 @@
                             Original Quality
                         </div>
                     </div>
-                    
-                    <div class="ad-container">
-                        <div class="ad-placeholder">
-                            <i class="fas fa-ad"></i>
-                            <p>Ad Space (728x90)</p>
-                            <small>Your AdSense ads will appear here</small>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1558,14 +1721,6 @@
             <div class="page-content">
                 <h1>Instagram Hashtag Generator</h1>
                 <p class="hero-subtitle">Generate high-performing hashtags for your niche to boost reach and engagement</p>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
                 
                 <div class="generator-container">
                     <div class="generator-header">
@@ -1621,14 +1776,6 @@
                     </div>
                 </div>
                 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-                
                 <!-- SEO Content -->
                 <div class="seo-content">
                     <h2>Why Use Hashtags on Instagram?</h2>
@@ -1667,14 +1814,6 @@
             <div class="page-content">
                 <h1>Instagram Caption Generator</h1>
                 <p class="hero-subtitle">Create engaging captions that increase likes, comments, and shares</p>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
                 
                 <div class="generator-container">
                     <div class="generator-header">
@@ -1740,14 +1879,6 @@
                     </div>
                 </div>
                 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-                
                 <!-- SEO Content -->
                 <div class="seo-content">
                     <h2>The Power of Great Instagram Captions</h2>
@@ -1793,14 +1924,6 @@
             <div class="page-content">
                 <h1>Instagram Bio Generator</h1>
                 <p class="hero-subtitle">Create a compelling Instagram bio that converts visitors into followers</p>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
                 
                 <div class="generator-container">
                     <div class="generator-header">
@@ -1858,14 +1981,6 @@
                             <i class="fas fa-copy"></i> Copy
                         </button>
                         <pre id="bioOutput"></pre>
-                    </div>
-                </div>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
                     </div>
                 </div>
                 
@@ -1932,14 +2047,6 @@
                 <h1>Social Media Tutorials</h1>
                 <p>Step-by-step guides to master social media tools and strategies</p>
                 
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
-                </div>
-                
                 <h2>Download Tools Tutorials</h2>
                 
                 <div class="tutorial-step">
@@ -1956,14 +2063,6 @@
                     <strong>Step 2:</strong> Paste the URL into our YouTube Shorts Downloader<br>
                     <strong>Step 3:</strong> Select your preferred quality and click "Download Short Now"<br>
                     <strong>Pro Tip:</strong> Higher quality = larger file size, choose based on your needs</p>
-                </div>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (300x250)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
                 </div>
                 
                 <h2>Content Creation Tutorials</h2>
@@ -1993,14 +2092,6 @@
                     3. Emoji strategy for visual appeal<br>
                     4. Link-in-bio optimization<br>
                     5. Regular updates and A/B testing</p>
-                </div>
-                
-                <div class="ad-container">
-                    <div class="ad-placeholder">
-                        <i class="fas fa-ad"></i>
-                        <p>Ad Space (728x90)</p>
-                        <small>Your AdSense ads will appear here</small>
-                    </div>
                 </div>
             </div>
         </section>
