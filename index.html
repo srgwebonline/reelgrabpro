@@ -145,163 +145,6 @@
             }
         }
 
-        /* Dancing Rock Band in Header */
-        .rock-band {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .band-member {
-            position: absolute;
-            bottom: 0;
-            width: 40px;
-            height: 60px;
-            animation: rockDance 1s infinite ease-in-out;
-        }
-
-        .band-member:nth-child(1) { left: 15%; animation-delay: 0s; }
-        .band-member:nth-child(2) { left: 25%; animation-delay: 0.2s; }
-        .band-member:nth-child(3) { left: 35%; animation-delay: 0.4s; }
-        .band-member:nth-child(4) { left: 45%; animation-delay: 0.6s; }
-        .band-member:nth-child(5) { left: 55%; animation-delay: 0.8s; }
-        .band-member:nth-child(6) { left: 65%; animation-delay: 1s; }
-        .band-member:nth-child(7) { left: 75%; animation-delay: 1.2s; }
-        .band-member:nth-child(8) { left: 85%; animation-delay: 1.4s; }
-
-        @keyframes rockDance {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(-5deg); }
-            50% { transform: translateY(5px) rotate(5deg); }
-            75% { transform: translateY(-5px) rotate(-3deg); }
-        }
-
-        .band-head {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
-            background: var(--gradient);
-            border-radius: 50%;
-            animation: headBob 0.5s infinite alternate;
-        }
-
-        @keyframes headBob {
-            0% { transform: translateX(-50%) translateY(0); }
-            100% { transform: translateX(-50%) translateY(-3px); }
-        }
-
-        .band-body {
-            position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 25px;
-            height: 25px;
-            background: var(--secondary);
-            border-radius: 10px;
-        }
-
-        .band-arm {
-            position: absolute;
-            top: 30px;
-            width: 20px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 4px;
-            animation: armWave 0.3s infinite alternate;
-        }
-
-        .arm-left {
-            left: -15px;
-            transform-origin: right center;
-        }
-
-        .arm-right {
-            right: -15px;
-            transform-origin: left center;
-        }
-
-        @keyframes armWave {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(20deg); }
-        }
-
-        .band-leg {
-            position: absolute;
-            top: 45px;
-            width: 8px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 4px;
-            animation: legKick 0.4s infinite alternate;
-        }
-
-        .leg-left {
-            left: 10px;
-            transform-origin: top center;
-        }
-
-        .leg-right {
-            right: 10px;
-            transform-origin: top center;
-        }
-
-        @keyframes legKick {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(15deg); }
-        }
-
-        /* Music Notes Animation */
-        .music-notes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .note {
-            position: absolute;
-            font-size: 20px;
-            color: var(--primary);
-            opacity: 0.7;
-            animation: floatNote 3s infinite linear;
-        }
-
-        .note:nth-child(1) { top: 20px; left: 20%; animation-delay: 0s; }
-        .note:nth-child(2) { top: 40px; left: 30%; animation-delay: 0.5s; }
-        .note:nth-child(3) { top: 10px; left: 40%; animation-delay: 1s; }
-        .note:nth-child(4) { top: 50px; left: 50%; animation-delay: 1.5s; }
-        .note:nth-child(5) { top: 30px; left: 60%; animation-delay: 2s; }
-        .note:nth-child(6) { top: 60px; left: 70%; animation-delay: 2.5s; }
-        .note:nth-child(7) { top: 20px; left: 80%; animation-delay: 3s; }
-
-        @keyframes floatNote {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
         /* Theme Toggle */
         .theme-toggle {
             position: fixed;
@@ -347,7 +190,6 @@
             background: var(--card-bg);
             border-bottom: 1px solid var(--card-border);
             backdrop-filter: blur(10px);
-            overflow: hidden;
         }
 
         .header-container {
@@ -1230,11 +1072,6 @@
                 padding: 0.5rem;
                 font-size: 0.9rem;
             }
-
-            /* Hide rock band on smaller screens to avoid clutter */
-            .rock-band {
-                display: none;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1317,86 +1154,6 @@
         <div class="shape"></div>
         <div class="shape"></div>
         <div class="shape"></div>
-    </div>
-
-    <!-- Dancing Rock Band in Header Background -->
-    <div class="rock-band" id="rockBand">
-        <!-- Band Members -->
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        <div class="band-member">
-            <div class="band-head"></div>
-            <div class="band-body"></div>
-            <div class="band-arm arm-left"></div>
-            <div class="band-arm arm-right"></div>
-            <div class="band-leg leg-left"></div>
-            <div class="band-leg leg-right"></div>
-        </div>
-        
-        <!-- Music Notes -->
-        <div class="music-notes">
-            <div class="note">♪</div>
-            <div class="note">♫</div>
-            <div class="note">♬</div>
-            <div class="note">♪</div>
-            <div class="note">♫</div>
-            <div class="note">♬</div>
-            <div class="note">♪</div>
-        </div>
     </div>
 
     <!-- Theme Toggle -->
